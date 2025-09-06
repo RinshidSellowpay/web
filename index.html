@@ -2497,6 +2497,13 @@
                 productDiv.className = 'product';
                 productDiv.dataset.category = product.category;
                 productDiv.style.animationDelay = `${index * 0.1}s`;
+                productDiv.style.cursor = 'pointer';
+                productDiv.onclick = (e) => {
+                    // Prevent navigation when clicking on buttons
+                    if (!e.target.closest('button')) {
+                        window.location.href = `detail.html?id=${product.id}`;
+                    }
+                };
 
 
                 const badgeHtml = product.badge ? 
@@ -2521,8 +2528,8 @@
                         ${badgeHtml}
                         <img src="${product.image}" alt="${product.name}" class="product-image">
                         <div class="product-actions">
-                            <button class="action-btn" onclick="toggleWishlistItem(${product.id})" title="Add to Wishlist">❤️</button>
-                            <button class="action-btn" onclick="quickView(${product.id})" title="Quick View">👁️</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); toggleWishlistItem(${product.id})" title="Add to Wishlist">❤️</button>
+                            <button class="action-btn" onclick="event.stopPropagation(); window.location.href='detail.html?id=${product.id}'" title="View Details">👁️</button>
                         </div>
                         <div class="color-options">
                             ${colorOptionsHtml}
@@ -2540,8 +2547,8 @@
                             $${product.price}
                         </div>
                         <div class="product-actions-bottom">
-                            <button class="add-btn" onclick="addToCart(${product.id})">Add to Cart</button>
-                            <button class="quick-view-btn" onclick="quickView(${product.id})">Quick View</button>
+                            <button class="add-btn" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+                            <button class="quick-view-btn" onclick="event.stopPropagation(); window.location.href='detail.html?id=${product.id}'">View Details</button>
                         </div>
                     </div>
                 `;
