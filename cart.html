@@ -154,6 +154,27 @@
             width: 100%;
         }
 
+        /* Nav Actions */
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .profile-icon {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            color: #667eea;
+            transform: scale(1.1);
+        }
+
         /* Main Container */
         .cart-container {
             max-width: 1400px;
@@ -766,6 +787,9 @@
                 <li><a href="index.html#collections">Collections</a></li>
                 <li><a href="index.html#about">About</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="profile-icon" onclick="goToProfile()" title="Profile">👤</button>
+            </div>
         </nav>
     </header>
 
@@ -870,6 +894,16 @@
     </div>
 
     <script>
+        // Profile navigation
+        function goToProfile() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                window.location.href = 'profile.html';
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+
         // Sample cart data
         let cartItems = [
             {

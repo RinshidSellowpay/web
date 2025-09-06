@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - SOLE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 20px 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        /* Profile Sidebar */
+        .profile-sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            animation: slideRight 0.6s ease-out;
+        }
+
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .edit-picture {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .edit-picture:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-name {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-name h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .profile-name p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            padding: 20px 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .stat {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .profile-menu {
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .menu-item:hover,
+        .menu-item.active {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .menu-icon {
+            font-size: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            animation: slideLeft 0.6s ease-out;
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Form Styles */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .save-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Order History */
+        .order-card {
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .order-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .order-number {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .order-status {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-delivered {
+            background: #d4f4dd;
+            color: #27ae60;
+        }
+
+        .status-processing {
+            background: #fff3cd;
+            color: #f39c12;
+        }
+
+        .status-shipped {
+            background: #cfe2ff;
+            color: #0d6efd;
+        }
+
+        .order-items {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .order-item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .order-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Wishlist */
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .wishlist-item {
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .wishlist-item:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .wishlist-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .wishlist-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .wishlist-price {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .remove-wishlist {
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: #fee;
+            color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-wishlist:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+        /* Settings */
+        .settings-group {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .settings-group:last-child {
+            border-bottom: none;
+        }
+
+        .settings-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .toggle-setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .toggle-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background: #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(25px);
+        }
+
+        /* Success Toast */
+        .toast {
+            position: fixed;
+            top: -100px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: top 0.5s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wishlist-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo" onclick="window.location.href='index.html'">SOLE</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#shop">Shop</a>
+            <a href="cart.html">Cart</a>
+            <a href="#" class="active">Profile</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Profile Sidebar -->
+        <div class="profile-sidebar">
+            <div class="profile-picture">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&size=150&background=667eea&color=fff" alt="Profile" class="profile-img" id="profileImg">
+                <div class="edit-picture" onclick="changeProfilePicture()">
+                    📷
+                </div>
+            </div>
+
+            <div class="profile-name">
+                <h2 id="profileName">John Doe</h2>
+                <p id="profileEmail">john.doe@example.com</p>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Orders</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Wishlist</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+            </div>
+
+            <div class="profile-menu">
+                <div class="menu-item active" onclick="showSection('overview')">
+                    <span class="menu-icon">👤</span>
+                    <span>Overview</span>
+                </div>
+                <div class="menu-item" onclick="showSection('orders')">
+                    <span class="menu-icon">📦</span>
+                    <span>Order History</span>
+                </div>
+                <div class="menu-item" onclick="showSection('wishlist')">
+                    <span class="menu-icon">❤️</span>
+                    <span>Wishlist</span>
+                </div>
+                <div class="menu-item" onclick="showSection('addresses')">
+                    <span class="menu-icon">📍</span>
+                    <span>Addresses</span>
+                </div>
+                <div class="menu-item" onclick="showSection('settings')">
+                    <span class="menu-icon">⚙️</span>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Overview Section -->
+            <div class="content-section active" id="overview">
+                <h2 class="section-title">Personal Information</h2>
+                <form id="profileForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" value="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" value="Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="john.doe@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" value="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth</label>
+                            <input type="date" id="birthdate" value="1990-01-01">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender">
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" placeholder="Tell us about yourself...">Sneaker enthusiast and collector. Always on the lookout for the latest drops!</textarea>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <!-- Orders Section -->
+            <div class="content-section" id="orders">
+                <h2 class="section-title">Order History</h2>
+                
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-number">Order #SO2024001</span>
+                        <span class="order-status status-delivered">Delivered</span>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                    </div>
+                    <div class="order-details">
+                        <span>2 items • Dec 15, 2024</span>
+                        <span style="font-weight: bold; color: #667eea;">$289.99</span>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-number">Order #SO2024002</span>
+                        <span class="order-status status-shipped">Shipped</span>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                    </div>
+                    <div class="order-details">
+                        <span>1 item • Dec 20, 2024</span>
+                        <span style="font-weight: bold; color: #667eea;">$149.99</span>
+                    </div>
+                </div>
+
+                <div class="order-card">
+                    <div class="order-header">
+                        <span class="order-number">Order #SO2024003</span>
+                        <span class="order-status status-processing">Processing</span>
+                    </div>
+                    <div class="order-items">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                        <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                        <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=60&h=60&fit=crop" alt="Shoe" class="order-item-img">
+                    </div>
+                    <div class="order-details">
+                        <span>3 items • Dec 22, 2024</span>
+                        <span style="font-weight: bold; color: #667eea;">$429.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wishlist Section -->
+            <div class="content-section" id="wishlist">
+                <h2 class="section-title">My Wishlist</h2>
+                <div class="wishlist-grid">
+                    <div class="wishlist-item">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=150&fit=crop" alt="Shoe" class="wishlist-img">
+                        <div class="wishlist-name">Nike Air Max 90</div>
+                        <div class="wishlist-price">$149.99</div>
+                        <button class="remove-wishlist">Remove</button>
+                    </div>
+                    <div class="wishlist-item">
+                        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=200&h=150&fit=crop" alt="Shoe" class="wishlist-img">
+                        <div class="wishlist-name">Adidas Ultraboost</div>
+                        <div class="wishlist-price">$189.99</div>
+                        <button class="remove-wishlist">Remove</button>
+                    </div>
+                    <div class="wishlist-item">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=200&h=150&fit=crop" alt="Shoe" class="wishlist-img">
+                        <div class="wishlist-name">New Balance 574</div>
+                        <div class="wishlist-price">$119.99</div>
+                        <button class="remove-wishlist">Remove</button>
+                    </div>
+                    <div class="wishlist-item">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=200&h=150&fit=crop" alt="Shoe" class="wishlist-img">
+                        <div class="wishlist-name">Nike Pegasus</div>
+                        <div class="wishlist-price">$129.99</div>
+                        <button class="remove-wishlist">Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Addresses Section -->
+            <div class="content-section" id="addresses">
+                <h2 class="section-title">Shipping Addresses</h2>
+                <form>
+                    <h3 style="margin-bottom: 20px; color: #666;">Primary Address</h3>
+                    <div class="form-grid">
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="street">Street Address</label>
+                            <input type="text" id="street" value="123 Main Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" value="New York">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <input type="text" id="state" value="NY">
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" value="10001">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country">
+                                <option value="us" selected>United States</option>
+                                <option value="ca">Canada</option>
+                                <option value="uk">United Kingdom</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-btn">Save Address</button>
+                </form>
+            </div>
+
+            <!-- Settings Section -->
+            <div class="content-section" id="settings">
+                <h2 class="section-title">Account Settings</h2>
+                
+                <div class="settings-group">
+                    <h3 class="settings-title">Notifications</h3>
+                    <div class="toggle-setting">
+                        <span class="toggle-label">Email notifications for new products</span>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="toggle-setting">
+                        <span class="toggle-label">SMS notifications for order updates</span>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="toggle-setting">
+                        <span class="toggle-label">Promotional emails</span>
+                        <div class="toggle-switch active" onclick="toggleSwitch(this)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3 class="settings-title">Privacy</h3>
+                    <div class="toggle-setting">
+                        <span class="toggle-label">Make profile public</span>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                    <div class="toggle-setting">
+                        <span class="toggle-label">Show wishlist to others</span>
+                        <div class="toggle-switch" onclick="toggleSwitch(this)">
+                            <div class="toggle-slider"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3 class="settings-title">Security</h3>
+                    <button class="save-btn" style="margin-right: 10px;">Change Password</button>
+                    <button class="save-btn" style="background: linear-gradient(135deg, #667eea, #764ba2);">Enable Two-Factor Auth</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="toast" id="toast">
+        ✓ Changes saved successfully!
+    </div>
+
+    <script>
+        // Load user data from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+            if (userData.firstName) {
+                document.getElementById('firstName').value = userData.firstName;
+                document.getElementById('lastName').value = userData.lastName;
+                document.getElementById('profileName').textContent = `${userData.firstName} ${userData.lastName}`;
+                document.getElementById('profileImg').src = `https://ui-avatars.com/api/?name=${userData.firstName}+${userData.lastName}&size=150&background=667eea&color=fff`;
+            }
+            if (userData.email) {
+                document.getElementById('email').value = userData.email;
+                document.getElementById('profileEmail').textContent = userData.email;
+            }
+            if (userData.phone) {
+                document.getElementById('phone').value = userData.phone;
+            }
+            if (userData.birthdate) {
+                document.getElementById('birthdate').value = userData.birthdate;
+            }
+            if (userData.gender) {
+                document.getElementById('gender').value = userData.gender;
+            }
+        });
+
+        // Show section
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(section).classList.add('active');
+            
+            // Update menu
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+
+        // Toggle switch
+        function toggleSwitch(element) {
+            element.classList.toggle('active');
+        }
+
+        // Save profile changes
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Update localStorage
+            const userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                birthdate: document.getElementById('birthdate').value,
+                gender: document.getElementById('gender').value
+            };
+            
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Update profile display
+            document.getElementById('profileName').textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById('profileEmail').textContent = userData.email;
+            document.getElementById('profileImg').src = `https://ui-avatars.com/api/?name=${userData.firstName}+${userData.lastName}&size=150&background=667eea&color=fff`;
+            
+            // Show success toast
+            showToast();
+        });
+
+        // Show toast notification
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Change profile picture
+        function changeProfilePicture() {
+            // In a real app, this would open a file picker
+            alert('Profile picture upload functionality would be implemented here');
+        }
+
+        // Remove from wishlist
+        document.querySelectorAll('.remove-wishlist').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const item = this.closest('.wishlist-item');
+                item.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    item.remove();
+                    showToast();
+                }, 300);
+            });
+        });
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userEmail');
+            window.location.href = 'login.html';
+        }
+
+        // Add fadeOut animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; transform: scale(1); }
+                to { opacity: 0; transform: scale(0.8); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

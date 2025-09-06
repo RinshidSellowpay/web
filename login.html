@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SOLE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Shapes */
+        .bg-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.3);
+            top: -150px;
+            left: -150px;
+            animation-duration: 20s;
+        }
+
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.2);
+            bottom: -100px;
+            right: -100px;
+            animation-duration: 25s;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.25);
+            top: 50%;
+            right: 10%;
+            animation-duration: 18s;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, -30px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 20px) rotate(240deg);
+            }
+        }
+
+        /* Login Container */
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .logo h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Form Styles */
+        .login-form {
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 45px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 15px;
+            font-size: 12px;
+            color: #667eea;
+            background: white;
+            padding: 0 5px;
+        }
+
+        .form-group .icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input:focus ~ .icon {
+            color: #667eea;
+        }
+
+        /* Remember Me & Forgot Password */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #667eea;
+        }
+
+        .remember-me label {
+            color: #666;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Social Login */
+        .social-login {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sign Up Link */
+        .signup-link {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Back to Home */
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .back-home:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Error Message */
+        .error-message {
+            display: none;
+            background: #fee;
+            color: #c33;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px;
+                margin: 20px;
+            }
+
+            .logo h1 {
+                font-size: 36px;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Back to Home Link -->
+    <a href="index.html" class="back-home">
+        ← Back to Home
+    </a>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="logo">
+            <h1>SOLE</h1>
+            <p>Welcome back! Please login to your account.</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage">
+            Invalid email or password. Please try again.
+        </div>
+
+        <!-- Login Form -->
+        <form class="login-form" id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+                <span class="icon">📧</span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" placeholder=" " required>
+                <label for="password">Password</label>
+                <span class="icon">🔒</span>
+            </div>
+
+            <div class="form-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span id="btnText">Login</span>
+                <div class="loading" id="loading"></div>
+            </button>
+        </form>
+
+        <!-- Social Login -->
+        <div class="social-login">
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+            <div class="social-buttons">
+                <a href="#" class="social-btn">
+                    <span>🔵</span> Google
+                </a>
+                <a href="#" class="social-btn">
+                    <span>📘</span> Facebook
+                </a>
+                <a href="#" class="social-btn">
+                    <span>🍎</span> Apple
+                </a>
+            </div>
+        </div>
+
+        <!-- Sign Up Link -->
+        <div class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+
+    <script>
+        // Form submission with animation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const loading = document.getElementById('loading');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hide error message if visible
+            errorMessage.style.display = 'none';
+            
+            // Show loading animation
+            btnText.style.display = 'none';
+            loading.style.display = 'block';
+            submitBtn.disabled = true;
+            
+            // Simulate login process
+            setTimeout(() => {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Simple validation (in real app, this would be server-side)
+                if (email && password) {
+                    // Store login state
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userEmail', email);
+                    
+                    // Redirect to profile page
+                    window.location.href = 'profile.html';
+                } else {
+                    // Show error
+                    errorMessage.style.display = 'block';
+                    btnText.style.display = 'block';
+                    loading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            }, 1500);
+        });
+
+        // Password visibility toggle could be added here
+        // Social login handlers could be added here
+    </script>
+</body>
+</html>

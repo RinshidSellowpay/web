@@ -179,7 +179,7 @@
         }
 
 
-        .search-icon, .wishlist-icon {
+        .search-icon, .wishlist-icon, .profile-icon {
             background: none;
             border: none;
             font-size: 1.2rem;
@@ -190,7 +190,7 @@
         }
 
 
-        .search-icon:hover, .wishlist-icon:hover {
+        .search-icon:hover, .wishlist-icon:hover, .profile-icon:hover {
             color: #667eea;
             transform: scale(1.1);
         }
@@ -1670,6 +1670,7 @@
                     ❤️
                     <span class="wishlist-count" id="wishlistCount">0</span>
                 </button>
+                <button class="profile-icon" onclick="goToProfile()" title="Profile">👤</button>
                 <button class="cart" id="cartBtn" onclick="window.location.href='cart.html'">Cart (0)</button>
             </div>
         </nav>
@@ -2738,6 +2739,15 @@
 
         function closeSearch() {
             document.getElementById('searchModal').style.display = 'none';
+        }
+
+        function goToProfile() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                window.location.href = 'profile.html';
+            } else {
+                window.location.href = 'login.html';
+            }
         }
 
 

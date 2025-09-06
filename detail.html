@@ -159,6 +159,20 @@
             transform: translateY(-2px);
         }
 
+        .profile-icon {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            color: #667eea;
+            transform: scale(1.1);
+        }
+
         /* Main Container */
         .product-container {
             max-width: 1400px;
@@ -1000,6 +1014,7 @@
                     <span>←</span>
                     <span>Back to Shop</span>
                 </a>
+                <button class="profile-icon" onclick="goToProfile()" title="Profile">👤</button>
                 <button class="cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
                     Cart
                     <span class="cart-count" id="cartCount">0</span>
@@ -1251,6 +1266,16 @@
     </div>
 
     <script>
+        // Profile navigation
+        function goToProfile() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                window.location.href = 'profile.html';
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+
         // Product Data (would normally come from backend)
         const products = [
             {
