@@ -1000,7 +1000,7 @@
                     <span>←</span>
                     <span>Back to Shop</span>
                 </a>
-                <button class="cart-btn" id="cartBtn">
+                <button class="cart-btn" id="cartBtn" onclick="window.location.href='cart.html'">
                     Cart
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
@@ -1482,6 +1482,26 @@
         function addToCart() {
             cartCount += quantity;
             updateCartCount();
+            
+            // Save to localStorage for cart page
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.id === currentProduct.id);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    id: currentProduct.id,
+                    name: currentProduct.name,
+                    price: currentProduct.price,
+                    quantity: quantity,
+                    size: selectedSize,
+                    color: currentProduct.colors[selectedColor],
+                    image: currentProduct.images[0]
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
             showToast('Success!', `${quantity} item(s) added to cart`);
             
             // Animate button

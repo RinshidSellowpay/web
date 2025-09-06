@@ -1670,7 +1670,7 @@
                     ❤️
                     <span class="wishlist-count" id="wishlistCount">0</span>
                 </button>
-                <button class="cart" id="cartBtn">Cart (0)</button>
+                <button class="cart" id="cartBtn" onclick="window.location.href='cart.html'">Cart (0)</button>
             </div>
         </nav>
     </header>
@@ -2753,6 +2753,26 @@
 
         function addToCart(productId) {
             cartSystem.addItem(productId);
+            // Save to localStorage for cart page
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                const existingItem = cart.find(item => item.id === productId);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        quantity: 1,
+                        size: '8.5',
+                        color: product.colors[0],
+                        image: product.image
+                    });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
         }
 
 
