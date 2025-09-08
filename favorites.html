@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorites - SOLE</title>
+    <link rel="stylesheet" href="css/favorites.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-orb orb1"></div>
+        <div class="floating-orb orb2"></div>
+        <div class="floating-orb orb3"></div>
+        <div class="floating-heart heart1">❤️</div>
+        <div class="floating-heart heart2">💜</div>
+        <div class="floating-heart heart3">💙</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">SOLE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="favorites.html" class="active">Favorites</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" onclick="openSearch()">🔍</button>
+                <a href="favorites.html" class="favorites-icon active">
+                    ❤️ <span class="favorites-count" id="favoritesCount">0</span>
+                </a>
+                <a href="cart.html" class="cart-icon">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="profile.html" class="profile-icon">👤</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">
+                <span class="title-icon">❤️</span>
+                My Favorites
+            </h1>
+            <p class="page-subtitle">Your personally curated collection of beloved items</p>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalItems">0</span>
+                    <span class="stat-label">Items</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalValue">$0</span>
+                    <span class="stat-label">Total Value</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="savedAmount">$0</span>
+                    <span class="stat-label">Potential Savings</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter and Sort Options -->
+        <div class="controls-section">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterFavorites('all')">All Items</button>
+                <button class="filter-btn" onclick="filterFavorites('shoes')">Shoes</button>
+                <button class="filter-btn" onclick="filterFavorites('shirts')">Shirts</button>
+                <button class="filter-btn" onclick="filterFavorites('pants')">Pants</button>
+                <button class="filter-btn" onclick="filterFavorites('caps')">Caps</button>
+                <button class="filter-btn" onclick="filterFavorites('watches')">Watches</button>
+                <button class="filter-btn sale-filter" onclick="filterFavorites('sale')">On Sale 🔥</button>
+            </div>
+            <div class="sort-options">
+                <select id="sortSelect" onchange="sortFavorites(this.value)">
+                    <option value="recent">Recently Added</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                    <option value="discount">Biggest Discount</option>
+                </select>
+                <button class="view-toggle" onclick="toggleView()">
+                    <span id="viewIcon">⊞</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">💔</div>
+            <h2>Your favorites list is empty</h2>
+            <p>Start adding items you love to build your personal collection</p>
+            <a href="collections.html" class="explore-btn">Explore Collections</a>
+        </div>
+
+        <!-- Favorites Grid -->
+        <div class="favorites-grid" id="favoritesGrid">
+            <!-- Sample favorite items - will be populated by JavaScript -->
+            <div class="favorite-card" data-category="shoes" data-price="189.99">
+                <div class="card-badge">Sale</div>
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Nike Air Max 90" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(1)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">Nike</div>
+                    <div class="name">Air Max 90</div>
+                    <div class="price-section">
+                        <span class="price">$189.99</span>
+                        <span class="original-price">$220.00</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(324)</span>
+                    </div>
+                    <div class="date-added">Added 2 days ago</div>
+                </div>
+            </div>
+
+            <div class="favorite-card" data-category="shirts" data-price="59.99">
+                <div class="card-badge new">New</div>
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400" alt="Nike Polo" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(2)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">Nike</div>
+                    <div class="name">Dri-FIT Polo Shirt</div>
+                    <div class="price-section">
+                        <span class="price">$59.99</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐</span>
+                        <span class="reviews">(234)</span>
+                    </div>
+                    <div class="date-added">Added 5 days ago</div>
+                </div>
+            </div>
+
+            <div class="favorite-card" data-category="watches" data-price="299.99">
+                <div class="card-badge premium">Premium</div>
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smart Watch" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(3)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">TechTime</div>
+                    <div class="name">Smart Sport Watch Pro</div>
+                    <div class="price-section">
+                        <span class="price">$299.99</span>
+                        <span class="original-price">$399.00</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(2.3k)</span>
+                    </div>
+                    <div class="date-added">Added 1 week ago</div>
+                </div>
+            </div>
+
+            <div class="favorite-card" data-category="pants" data-price="119.99">
+                <div class="card-badge hot">Hot</div>
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400" alt="Nike Joggers" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(4)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">Nike</div>
+                    <div class="name">Tech Fleece Joggers</div>
+                    <div class="price-section">
+                        <span class="price">$119.99</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(892)</span>
+                    </div>
+                    <div class="date-added">Added 2 weeks ago</div>
+                </div>
+            </div>
+
+            <div class="favorite-card" data-category="caps" data-price="29.99">
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400" alt="Baseball Cap" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(5)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(5)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">Nike</div>
+                    <div class="name">Heritage 86 Cap</div>
+                    <div class="price-section">
+                        <span class="price">$29.99</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(1.2k)</span>
+                    </div>
+                    <div class="date-added">Added 3 weeks ago</div>
+                </div>
+            </div>
+
+            <div class="favorite-card" data-category="shoes" data-price="449.99">
+                <div class="card-badge limited">Limited</div>
+                <button class="remove-btn" onclick="removeFavorite(this)">✕</button>
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400" alt="Air Jordan 1" class="card-image">
+                    <div class="card-overlay">
+                        <button class="quick-view-btn" onclick="quickView(6)">Quick View</button>
+                        <button class="add-cart-btn" onclick="addToCart(6)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <div class="brand">Jordan</div>
+                    <div class="name">Air Jordan 1 Retro High</div>
+                    <div class="price-section">
+                        <span class="price">$249.99</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="reviews">(2.1k)</span>
+                    </div>
+                    <div class="date-added">Added 1 month ago</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions Section -->
+        <div class="actions-section">
+            <button class="action-btn clear-all" onclick="clearAllFavorites()">
+                Clear All
+            </button>
+            <button class="action-btn add-all-cart" onclick="addAllToCart()">
+                Add All to Cart
+            </button>
+            <button class="action-btn share-list" onclick="shareList()">
+                Share List
+            </button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuickView()">✕</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">Product Name</h2>
+                    <p id="modalDescription">Product description</p>
+                    <div class="modal-price" id="modalPrice">$0.00</div>
+                    <div class="modal-actions">
+                        <button class="modal-btn view-details" onclick="viewDetails()">View Details</button>
+                        <button class="modal-btn add-to-cart" onclick="modalAddToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon" id="toastIcon">✓</div>
+        <div class="toast-message" id="toastMessage">Item added to cart</div>
+    </div>
+
+    <script src="js/favorites.js"></script>
+</body>
+</html>
