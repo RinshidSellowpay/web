@@ -747,24 +747,182 @@
             }
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #667eea;
+            padding: 0.5rem 1rem;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
         @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-actions {
+                gap: 0.5rem;
+            }
+
+            .profile-icon {
+                font-size: 1.2rem;
+            }
+
+            .cart-container {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+
+            .cart-items {
+                margin-bottom: 2rem;
+            }
+
+            .cart-header {
+                padding: 1rem 0;
+            }
+
+            .cart-title {
+                font-size: 1.5rem;
+            }
+
             .cart-item {
                 grid-template-columns: 80px 1fr;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .item-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .item-details h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .item-meta {
+                font-size: 0.85rem;
             }
 
             .item-actions {
                 grid-column: 1 / -1;
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
                 margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #eee;
+            }
+
+            .quantity-controls {
+                gap: 0.5rem;
+            }
+
+            .quantity-btn {
+                width: 30px;
+                height: 30px;
+            }
+
+            .item-price {
+                font-size: 1.1rem;
+            }
+
+            .cart-summary {
+                position: static;
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .summary-title {
+                font-size: 1.3rem;
+            }
+
+            .promo-code {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .promo-code input,
+            .promo-code button {
+                width: 100%;
+            }
+
+            .checkout-btn,
+            .continue-shopping {
+                width: 100%;
+                padding: 1rem;
             }
 
             .features {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 2rem 1rem;
             }
 
-            .nav-links {
-                display: none;
+            .empty-cart {
+                padding: 3rem 1rem;
+            }
+
+            .empty-cart-icon {
+                font-size: 4rem;
+            }
+
+            .empty-cart h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cart-item {
+                padding: 0.75rem;
+            }
+
+            .item-details {
+                padding-right: 1rem;
+            }
+
+            .remove-btn {
+                padding: 0.3rem;
+                font-size: 0.8rem;
+            }
+
+            .quantity-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
+            }
+
+            .summary-row {
+                font-size: 0.9rem;
+            }
+
+            .summary-total {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -780,6 +938,7 @@
     <!-- Header -->
     <header>
         <nav>
+            <button class="mobile-menu-btn" onclick="window.location.href='index.html'">← Back</button>
             <div class="logo" onclick="window.location.href='index.html'">SOLE</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>

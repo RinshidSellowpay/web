@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,8 +86,15 @@
 
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
         }
 
 
@@ -128,8 +136,15 @@
 
 
         @keyframes logoGlow {
-            0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(102, 126, 234, 0.3)); }
-            50% { filter: brightness(1.2) drop-shadow(0 0 20px rgba(102, 126, 234, 0.6)); }
+
+            0%,
+            100% {
+                filter: brightness(1) drop-shadow(0 0 0px rgba(102, 126, 234, 0.3));
+            }
+
+            50% {
+                filter: brightness(1.2) drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
+            }
         }
 
 
@@ -179,7 +194,9 @@
         }
 
 
-        .search-icon, .wishlist-icon, .profile-icon {
+        .search-icon,
+        .wishlist-icon,
+        .profile-icon {
             background: none;
             border: none;
             font-size: 1.2rem;
@@ -190,7 +207,9 @@
         }
 
 
-        .search-icon:hover, .wishlist-icon:hover, .profile-icon:hover {
+        .search-icon:hover,
+        .wishlist-icon:hover,
+        .profile-icon:hover {
             color: #667eea;
             transform: scale(1.1);
         }
@@ -233,7 +252,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
 
@@ -277,8 +296,13 @@
 
 
         @keyframes patternMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(20px, 20px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(20px, 20px);
+            }
         }
 
 
@@ -301,7 +325,7 @@
 
 
         .hero p {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1.3rem;
             font-weight: 300;
             margin-bottom: 2rem;
@@ -346,25 +370,46 @@
 
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
 
         @keyframes heroTitle {
-            0% { opacity: 0; transform: translateY(50px) scale(0.8); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
+            0% {
+                opacity: 0;
+                transform: translateY(50px) scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
 
         @keyframes heroSubtitle {
-            0% { opacity: 0; transform: translateX(-50px); }
-            100% { opacity: 1; transform: translateX(0); }
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
 
         @keyframes heroButton {
-            0% { opacity: 0; transform: translateY(30px) rotateX(90deg); }
-            100% { opacity: 1; transform: translateY(0) rotateX(0deg); }
+            0% {
+                opacity: 0;
+                transform: translateY(30px) rotateX(90deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
         }
 
 
@@ -416,7 +461,7 @@
 
         .stat-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
 
@@ -446,7 +491,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 9999;
             display: none;
             align-items: center;
@@ -608,7 +653,7 @@
 
         .product:hover {
             transform: translateY(-15px) rotateY(5deg);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -678,7 +723,7 @@
 
 
         .action-btn {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             border: none;
             width: 40px;
             height: 40px;
@@ -817,7 +862,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
 
@@ -874,8 +919,13 @@
 
 
         @keyframes bgMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
 
@@ -917,7 +967,7 @@
         .story-stat {
             text-align: center;
             padding: 1rem;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             backdrop-filter: blur(10px);
         }
@@ -941,7 +991,7 @@
             height: 400px;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -976,7 +1026,7 @@
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
             position: relative;
             height: 350px;
@@ -986,7 +1036,7 @@
 
         .collection-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
         }
 
 
@@ -1045,7 +1095,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 9999;
             display: none;
             align-items: center;
@@ -1124,7 +1174,7 @@
             background: white;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             position: relative;
         }
@@ -1226,7 +1276,7 @@
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -1234,7 +1284,7 @@
 
         .blog-post:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
 
@@ -1295,8 +1345,17 @@
 
 
         @keyframes sparkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.2);
+            }
         }
 
 
@@ -1445,30 +1504,69 @@
 
         /* Custom animations */
         @keyframes slideInStagger {
-            0% { opacity: 0; transform: translateY(100px) rotateX(20deg) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); }
+            0% {
+                opacity: 0;
+                transform: translateY(100px) rotateX(20deg) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg) scale(1);
+            }
         }
 
 
         @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3) rotateY(180deg); }
-            50% { opacity: 1; transform: scale(1.05) rotateY(90deg); }
-            70% { transform: scale(0.9) rotateY(45deg); }
-            100% { opacity: 1; transform: scale(1) rotateY(0deg); }
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotateY(180deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05) rotateY(90deg);
+            }
+
+            70% {
+                transform: scale(0.9) rotateY(45deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
         }
 
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
 
         @keyframes wiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            75% { transform: rotate(-5deg); }
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(5deg);
+            }
+
+            75% {
+                transform: rotate(-5deg);
+            }
         }
 
 
@@ -1486,60 +1584,428 @@
 
 
         @keyframes trailFade {
-            0% { opacity: 0.8; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0); }
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
         }
 
 
         /* Particle effects */
         @keyframes particleFloat {
-            0% { opacity: 0.7; transform: translateY(100vh) rotate(0deg); }
-            100% { opacity: 0; transform: translateY(-100px) rotate(360deg); }
+            0% {
+                opacity: 0.7;
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) rotate(360deg);
+            }
         }
 
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        /* Enhanced Animations */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
             }
-            
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        @keyframes glowPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(118, 75, 162, 0.8);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product.new-arrival {
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        .product.featured {
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        .product {
+            animation: slideInFromBottom 0.6s ease-out;
+        }
+
+        /* Mobile Menu Hamburger */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .mobile-menu-nav {
+            padding: 1rem 0;
+        }
+
+        .mobile-menu-nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-menu-nav a:hover,
+        .mobile-menu-nav a:active {
+            background: #f8f8f8;
+            border-left-color: #667eea;
+            color: #667eea;
+        }
+
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Responsive Design - Tablet */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
+
             .products-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1.5rem;
             }
-            
+
             .collections-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .newsletter-form {
-                flex-direction: column;
+        }
+
+        /* Responsive Design - Mobile */
+        @media (max-width: 768px) {
+
+            /* Navigation */
+            .mobile-menu-btn {
+                display: block;
             }
 
-
-            .brand-story-container {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .nav-links,
+            .search-icon,
+            .wishlist-icon {
+                display: none;
             }
 
+            nav {
+                padding: 1rem;
+            }
 
-            .filters {
+            .nav-actions {
                 gap: 0.5rem;
             }
 
+            .profile-icon {
+                font-size: 1.2rem;
+            }
+
+            .cart {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            /* Sections */
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Products */
+            .products-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .product-card {
+                border-radius: 10px;
+            }
+
+            .product-info h3 {
+                font-size: 0.95rem;
+            }
+
+            .product-price {
+                font-size: 1.1rem;
+            }
+
+            .quick-actions {
+                gap: 0.3rem;
+            }
+
+            .quick-actions button {
+                padding: 0.4rem;
+                font-size: 1rem;
+            }
+
+            /* Collections */
+            .collections-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            /* Newsletter */
+            .newsletter-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+            }
+
+            .newsletter-form button {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            /* Brand Story */
+            .brand-story-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .brand-story-content h2 {
+                font-size: 1.8rem;
+            }
+
+            /* Filters */
+            .filters {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
 
             .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            /* Products - Single Column on very small screens */
+            .products-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            /* Size Guide Modal */
+            .size-guide-content {
+                padding: 1.5rem;
+                margin: 1rem;
+                max-height: 90vh;
+            }
+
+            /* Search Modal */
+            .search-modal-content input {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* Touch-friendly adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            .product-card:hover .quick-actions {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .quick-actions {
+                opacity: 1;
+                transform: translateY(0);
+                background: rgba(255, 255, 255, 0.95);
+            }
+
+            .quick-actions button {
+                padding: 0.6rem;
+            }
+
+            button,
+            .btn,
+            a {
+                -webkit-tap-highlight-color: transparent;
             }
         }
 
@@ -1581,16 +2047,29 @@
         }
 
 
-        .loading-dot:nth-child(2) { animation-delay: 0.3s; }
-        .loading-dot:nth-child(3) { animation-delay: 0.6s; }
+        .loading-dot:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: 0.6s;
+        }
 
 
         @keyframes loadingBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div class="loading" id="loading">
@@ -1638,15 +2117,60 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>7</td><td>40</td><td>6</td><td>25.0</td></tr>
-                    <tr><td>7.5</td><td>40.5</td><td>6.5</td><td>25.5</td></tr>
-                    <tr><td>8</td><td>41</td><td>7</td><td>26.0</td></tr>
-                    <tr><td>8.5</td><td>42</td><td>7.5</td><td>26.5</td></tr>
-                    <tr><td>9</td><td>42.5</td><td>8</td><td>27.0</td></tr>
-                    <tr><td>9.5</td><td>43</td><td>8.5</td><td>27.5</td></tr>
-                    <tr><td>10</td><td>44</td><td>9</td><td>28.0</td></tr>
-                    <tr><td>10.5</td><td>44.5</td><td>9.5</td><td>28.5</td></tr>
-                    <tr><td>11</td><td>45</td><td>10</td><td>29.0</td></tr>
+                    <tr>
+                        <td>7</td>
+                        <td>40</td>
+                        <td>6</td>
+                        <td>25.0</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>40.5</td>
+                        <td>6.5</td>
+                        <td>25.5</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>41</td>
+                        <td>7</td>
+                        <td>26.0</td>
+                    </tr>
+                    <tr>
+                        <td>8.5</td>
+                        <td>42</td>
+                        <td>7.5</td>
+                        <td>26.5</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>42.5</td>
+                        <td>8</td>
+                        <td>27.0</td>
+                    </tr>
+                    <tr>
+                        <td>9.5</td>
+                        <td>43</td>
+                        <td>8.5</td>
+                        <td>27.5</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>44</td>
+                        <td>9</td>
+                        <td>28.0</td>
+                    </tr>
+                    <tr>
+                        <td>10.5</td>
+                        <td>44.5</td>
+                        <td>9.5</td>
+                        <td>28.5</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>45</td>
+                        <td>10</td>
+                        <td>29.0</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -1655,14 +2179,15 @@
 
     <header>
         <nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <div class="logo">SOLE</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#shop">Shop</a></li>
-                <li><a href="#collections">Collections</a></li>
+                <li><a href="collections.html">Collections</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="search-icon" onclick="openSearch()">🔍</button>
@@ -1676,11 +2201,31 @@
         </nav>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">SOLE</div>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">✕</button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="#home" onclick="toggleMobileMenu()">Home</a>
+            <a href="#shop" onclick="toggleMobileMenu()">Shop</a>
+            <a href="collections.html" onclick="toggleMobileMenu()">Collections</a>
+            <a href="#about" onclick="toggleMobileMenu()">About</a>
+            <a href="#blog" onclick="toggleMobileMenu()">Blog</a>
+            <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
+            <a href="profile.html">My Profile</a>
+            <a href="#" onclick="openSearch(); toggleMobileMenu()">Search</a>
+        </nav>
+    </div>
+
 
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Step Into Excellence</h1>
-            <p>Discover our curated collection of premium footwear designed for the modern lifestyle. Every step is a statement.</p>
+            <p>Discover our curated collection of premium footwear designed for the modern lifestyle. Every step is a
+                statement.</p>
             <a href="#shop" class="cta-btn">Explore Collection</a>
         </div>
     </section>
@@ -1715,11 +2260,12 @@
 
         <div class="filters">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="sneakers">Sneakers</button>
-            <button class="filter-btn" data-filter="formal">Formal</button>
-            <button class="filter-btn" data-filter="casual">Casual</button>
+            <button class="filter-btn" data-filter="sneakers">Shoes</button>
+            <button class="filter-btn" data-filter="shirts">Shirts</button>
+            <button class="filter-btn" data-filter="pants">Pants</button>
+            <button class="filter-btn" data-filter="caps">Caps</button>
+            <button class="filter-btn" data-filter="watches">Watches</button>
             <button class="filter-btn" data-filter="sports">Sports</button>
-            <button class="filter-btn" data-filter="boots">Boots</button>
             <button class="filter-btn" data-filter="limited">Limited Edition</button>
         </div>
 
@@ -1734,8 +2280,12 @@
         <div class="brand-story-container">
             <div class="story-content">
                 <h2>Our Story</h2>
-                <p>Founded in 2010, SOLE began as a small workshop dedicated to crafting exceptional footwear. Our passion for quality, innovation, and style has driven us to become a leading name in premium footwear.</p>
-                <p>Every pair of shoes tells a story of meticulous craftsmanship, sustainable practices, and unwavering commitment to excellence. We believe that great shoes are not just about looking good – they're about feeling confident and comfortable in every step you take.</p>
+                <p>Founded in 2010, SOLE began as a small workshop dedicated to crafting exceptional footwear. Our
+                    passion for quality, innovation, and style has driven us to become a leading name in premium
+                    footwear.</p>
+                <p>Every pair of shoes tells a story of meticulous craftsmanship, sustainable practices, and unwavering
+                    commitment to excellence. We believe that great shoes are not just about looking good – they're
+                    about feeling confident and comfortable in every step you take.</p>
                 <div class="story-stats">
                     <div class="story-stat">
                         <div class="story-stat-number">13</div>
@@ -1756,7 +2306,8 @@
                 </div>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1622396481328-9b1b78a35c1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Workshop" class="story-image">
+                <img src="https://images.unsplash.com/photo-1622396481328-9b1b78a35c1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Our Workshop" class="story-image">
             </div>
         </div>
     </section>
@@ -1766,10 +2317,11 @@
         <div class="collections-container">
             <h2 class="section-title">Collections</h2>
             <p class="section-subtitle">Explore our curated collections for every lifestyle</p>
-            
+
             <div class="collections-grid">
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1552066344-2464c1135c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="collection-image" alt="Street Collection">
+                <div class="collection-card" onclick="window.location.href='collections.html'">
+                    <img src="https://images.unsplash.com/photo-1552066344-2464c1135c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="collection-image" alt="Street Collection">
                     <div class="collection-overlay">
                         <div>
                             <div class="collection-title">Street Collection</div>
@@ -1777,9 +2329,10 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="collection-image" alt="Formal Collection">
+
+                <div class="collection-card" onclick="window.location.href='collections.html'">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="collection-image" alt="Formal Collection">
                     <div class="collection-overlay">
                         <div>
                             <div class="collection-title">Formal Collection</div>
@@ -1787,9 +2340,10 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="collection-image" alt="Athletic Collection">
+
+                <div class="collection-card" onclick="window.location.href='collections.html'">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="collection-image" alt="Athletic Collection">
                     <div class="collection-overlay">
                         <div>
                             <div class="collection-title">Athletic Collection</div>
@@ -1797,9 +2351,10 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="collection-card">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="collection-image" alt="Classic Collection">
+
+                <div class="collection-card" onclick="window.location.href='collections.html'">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        class="collection-image" alt="Classic Collection">
                     <div class="collection-overlay">
                         <div>
                             <div class="collection-title">Classic Collection</div>
@@ -1816,7 +2371,7 @@
         <div class="reviews-container">
             <h2 class="section-title">Customer Reviews</h2>
             <p class="section-subtitle">Real experiences from our satisfied customers</p>
-            
+
             <div class="reviews-grid">
                 <div class="review">
                     <div class="review-header">
@@ -1829,13 +2384,16 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"The quality is exceptional and the comfort is unmatched. These shoes have become my daily go-to! Perfect for both work and casual outings."</div>
+                    <div class="review-text">"The quality is exceptional and the comfort is unmatched. These shoes have
+                        become my daily go-to! Perfect for both work and casual outings."</div>
                     <div class="review-images">
-                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Review" class="review-image">
-                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Review" class="review-image">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Review" class="review-image">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Review" class="review-image">
                     </div>
                 </div>
-                
+
                 <div class="review">
                     <div class="review-header">
                         <div class="reviewer-avatar">MC</div>
@@ -1847,9 +2405,10 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"Perfect fit and amazing style. The customer service was also top-notch. Delivery was fast and the packaging was premium quality. Highly recommended!"</div>
+                    <div class="review-text">"Perfect fit and amazing style. The customer service was also top-notch.
+                        Delivery was fast and the packaging was premium quality. Highly recommended!"</div>
                 </div>
-                
+
                 <div class="review">
                     <div class="review-header">
                         <div class="reviewer-avatar">ER</div>
@@ -1861,9 +2420,11 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"Love the minimalist design and premium materials. Worth every penny for the quality you get. These shoes are incredibly versatile and comfortable."</div>
+                    <div class="review-text">"Love the minimalist design and premium materials. Worth every penny for
+                        the quality you get. These shoes are incredibly versatile and comfortable."</div>
                     <div class="review-images">
-                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Review" class="review-image">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            alt="Review" class="review-image">
                     </div>
                 </div>
 
@@ -1879,7 +2440,8 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"Outstanding craftsmanship! I've been wearing these for 6 months and they still look brand new. The attention to detail is remarkable."</div>
+                    <div class="review-text">"Outstanding craftsmanship! I've been wearing these for 6 months and they
+                        still look brand new. The attention to detail is remarkable."</div>
                 </div>
 
 
@@ -1894,7 +2456,8 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"Best investment I've made in footwear. The comfort level is incredible and they pair well with everything in my wardrobe."</div>
+                    <div class="review-text">"Best investment I've made in footwear. The comfort level is incredible and
+                        they pair well with everything in my wardrobe."</div>
                 </div>
 
 
@@ -1909,7 +2472,8 @@
                     <div class="review-rating">
                         <div class="stars">★★★★★</div>
                     </div>
-                    <div class="review-text">"Exceeded my expectations in every way. The sizing was perfect, quality is top-tier, and they arrived faster than expected. Will definitely order again!"</div>
+                    <div class="review-text">"Exceeded my expectations in every way. The sizing was perfect, quality is
+                        top-tier, and they arrived faster than expected. Will definitely order again!"</div>
                 </div>
             </div>
         </div>
@@ -1920,32 +2484,38 @@
         <div class="blog-container">
             <h2 class="section-title">Latest News</h2>
             <p class="section-subtitle">Stay updated with the latest trends and insights</p>
-            
+
             <div class="blog-grid">
                 <div class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post" class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Blog Post" class="blog-image">
                     <div class="blog-content">
                         <div class="blog-meta">December 15, 2024 • Style Guide</div>
                         <h3 class="blog-title">The Ultimate Guide to Caring for Premium Leather Shoes</h3>
-                        <p class="blog-excerpt">Learn the essential tips and techniques to keep your leather footwear looking pristine for years to come.</p>
+                        <p class="blog-excerpt">Learn the essential tips and techniques to keep your leather footwear
+                            looking pristine for years to come.</p>
                     </div>
                 </div>
-                
+
                 <div class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post" class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Blog Post" class="blog-image">
                     <div class="blog-content">
                         <div class="blog-meta">December 10, 2024 • Trends</div>
                         <h3 class="blog-title">Top 5 Footwear Trends for 2025</h3>
-                        <p class="blog-excerpt">Discover the upcoming trends that will define footwear fashion in the coming year.</p>
+                        <p class="blog-excerpt">Discover the upcoming trends that will define footwear fashion in the
+                            coming year.</p>
                     </div>
                 </div>
-                
+
                 <div class="blog-post">
-                    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog Post" class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Blog Post" class="blog-image">
                     <div class="blog-content">
                         <div class="blog-meta">December 5, 2024 • Sustainability</div>
                         <h3 class="blog-title">Our Commitment to Sustainable Manufacturing</h3>
-                        <p class="blog-excerpt">Learn about our eco-friendly practices and sustainable materials used in our footwear production.</p>
+                        <p class="blog-excerpt">Learn about our eco-friendly practices and sustainable materials used in
+                            our footwear production.</p>
                     </div>
                 </div>
             </div>
@@ -1979,7 +2549,7 @@
                         <li><a href="#">Track Your Order</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Company</h4>
                     <ul>
@@ -1991,7 +2561,7 @@
                         <li><a href="#">Affiliate Program</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
@@ -2009,17 +2579,19 @@
                         <li><a href="#">YouTube</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Newsletter</h4>
                     <p style="color: #ccc; margin-bottom: 1rem;">Subscribe for exclusive offers and updates</p>
                     <div style="display: flex; gap: 0.5rem;">
-                        <input type="email" placeholder="Email" style="flex: 1; padding: 0.5rem; border: none; border-radius: 4px;">
-                        <button style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Join</button>
+                        <input type="email" placeholder="Email"
+                            style="flex: 1; padding: 0.5rem; border: none; border-radius: 4px;">
+                        <button
+                            style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Join</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2024 SOLE. All rights reserved. | Privacy Policy | Terms of Service | Cookie Policy</p>
             </div>
@@ -2128,7 +2700,7 @@
                 price: 165,
                 originalPrice: null,
                 image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                category: "casual",
+                category: "sneakers",
                 badge: "New",
                 rating: 4.7,
                 reviews: 76,
@@ -2237,6 +2809,185 @@
                 rating: 4.9,
                 reviews: 45,
                 colors: ["#FF9A9E", "#FECFEF", "#A8EDEA"]
+            },
+            // SHIRTS
+            {
+                id: 21,
+                name: "Nike Dri-FIT Polo",
+                description: "Performance polo shirt with moisture-wicking technology",
+                price: 59,
+                originalPrice: 75,
+                image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800",
+                category: "shirts",
+                badge: "Sale",
+                rating: 4.6,
+                reviews: 234,
+                colors: ["#000000", "#FFFFFF", "#667eea"],
+                animationClass: "featured"
+            },
+            {
+                id: 22,
+                name: "Premium Cotton Tee",
+                description: "Soft organic cotton t-shirt for everyday comfort",
+                price: 35,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800",
+                category: "shirts",
+                badge: "New",
+                rating: 4.8,
+                reviews: 567,
+                colors: ["#FF6B6B", "#4ECDC4", "#45B7D1"],
+                animationClass: "new-arrival"
+            },
+            {
+                id: 23,
+                name: "Athletic Performance Shirt",
+                description: "Lightweight breathable fabric for intense workouts",
+                price: 45,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800",
+                category: "shirts",
+                badge: null,
+                rating: 4.7,
+                reviews: 189,
+                colors: ["#667eea", "#764ba2", "#000000"]
+            },
+            // PANTS
+            {
+                id: 24,
+                name: "Tech Fleece Joggers",
+                description: "Modern joggers with premium comfort and style",
+                price: 120,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800",
+                category: "pants",
+                badge: "Hot",
+                rating: 4.9,
+                reviews: 892,
+                colors: ["#000000", "#808080", "#2F4F4F"],
+                animationClass: "featured"
+            },
+            {
+                id: 25,
+                name: "Classic Track Pants",
+                description: "Retro-inspired track pants with modern comfort",
+                price: 80,
+                originalPrice: 95,
+                image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800",
+                category: "pants",
+                badge: "Sale",
+                rating: 4.5,
+                reviews: 445,
+                colors: ["#000080", "#FF0000", "#000000"]
+            },
+            {
+                id: 26,
+                name: "Premium Chinos",
+                description: "Versatile chinos perfect for any occasion",
+                price: 90,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=800",
+                category: "pants",
+                badge: null,
+                rating: 4.8,
+                reviews: 678,
+                colors: ["#F5DEB3", "#8B7355", "#000080"]
+            },
+            // CAPS
+            {
+                id: 27,
+                name: "Heritage Baseball Cap",
+                description: "Classic six-panel cap with adjustable strap",
+                price: 30,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800",
+                category: "caps",
+                badge: "New",
+                rating: 4.7,
+                reviews: 1234,
+                colors: ["#000000", "#FFFFFF", "#FF0000"],
+                animationClass: "new-arrival"
+            },
+            {
+                id: 28,
+                name: "Sport Performance Cap",
+                description: "Lightweight cap with moisture-wicking sweatband",
+                price: 25,
+                originalPrice: 35,
+                image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800",
+                category: "caps",
+                badge: "Sale",
+                rating: 4.6,
+                reviews: 789,
+                colors: ["#667eea", "#000000", "#FFFFFF"]
+            },
+            {
+                id: 29,
+                name: "Classic Snapback",
+                description: "Urban style snapback with flat brim",
+                price: 40,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800",
+                category: "caps",
+                badge: null,
+                rating: 4.8,
+                reviews: 567,
+                colors: ["#000000", "#808080", "#FF6B6B"]
+            },
+            // WATCHES
+            {
+                id: 30,
+                name: "Smart Sport Watch Pro",
+                description: "Advanced fitness tracking with premium design",
+                price: 300,
+                originalPrice: 399,
+                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+                category: "watches",
+                badge: "Limited",
+                rating: 4.9,
+                reviews: 2345,
+                colors: ["#000000", "#C0C0C0", "#FFD700"],
+                animationClass: "featured"
+            },
+            {
+                id: 31,
+                name: "Classic Chronograph",
+                description: "Timeless design with Swiss movement",
+                price: 450,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800",
+                category: "watches",
+                badge: "Premium",
+                rating: 5.0,
+                reviews: 945,
+                colors: ["#C0C0C0", "#FFD700", "#8B4513"]
+            },
+            {
+                id: 32,
+                name: "Digital Sport Watch",
+                description: "Rugged design with multiple sport modes",
+                price: 160,
+                originalPrice: null,
+                image: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?w=800",
+                category: "watches",
+                badge: "New",
+                rating: 4.6,
+                reviews: 678,
+                colors: ["#000000", "#FF0000", "#00FF00"],
+                animationClass: "new-arrival"
+            },
+            {
+                id: 33,
+                name: "Minimalist Classic",
+                description: "Clean minimal design for the modern professional",
+                price: 200,
+                originalPrice: 249,
+                image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800",
+                category: "watches",
+                badge: "Sale",
+                rating: 4.8,
+                reviews: 1123,
+                colors: ["#000000", "#FFFFFF", "#8B7355"]
             }
         ];
 
@@ -2268,11 +3019,11 @@
 
             setupMouseTrail() {
                 let mouseX = 0, mouseY = 0;
-                
+
                 document.addEventListener('mousemove', (e) => {
                     mouseX = e.clientX;
                     mouseY = e.clientY;
-                    
+
                     if (Math.random() < 0.3) {
                         this.createTrailDot(mouseX, mouseY);
                     }
@@ -2286,7 +3037,7 @@
                 dot.style.left = x + 'px';
                 dot.style.top = y + 'px';
                 document.body.appendChild(dot);
-                
+
                 setTimeout(() => dot.remove(), 1000);
             }
 
@@ -2304,7 +3055,7 @@
                 const particle = document.createElement('div');
                 const colors = ['#667eea', '#764ba2', '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'];
                 const size = Math.random() * 4 + 2;
-                
+
                 particle.style.cssText = `
                     position: fixed;
                     width: ${size}px;
@@ -2318,10 +3069,10 @@
                     opacity: 0.6;
                     animation: particleFloat ${8 + Math.random() * 4}s linear forwards;
                 `;
-                
+
                 document.body.appendChild(particle);
                 this.particles.push(particle);
-                
+
                 setTimeout(() => {
                     particle.remove();
                     this.particles = this.particles.filter(p => p !== particle);
@@ -2331,12 +3082,12 @@
 
             setupMagneticElements() {
                 const magneticElements = document.querySelectorAll('.add-btn, .cta-btn, .filter-btn');
-                
+
                 magneticElements.forEach(element => {
                     element.addEventListener('mouseenter', () => {
                         element.style.transform = 'scale(1.05) rotate(1deg)';
                     });
-                    
+
                     element.addEventListener('mouseleave', () => {
                         element.style.transform = 'scale(1) rotate(0deg)';
                     });
@@ -2369,7 +3120,7 @@
             animateText(element) {
                 const text = element.textContent;
                 element.innerHTML = '';
-                
+
                 [...text].forEach((char, index) => {
                     const span = document.createElement('span');
                     span.textContent = char === ' ' ? '\u00A0' : char;
@@ -2377,7 +3128,7 @@
                     span.style.transform = 'translateY(50px) rotateX(90deg)';
                     span.style.transition = `all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${index * 0.03}s`;
                     element.appendChild(span);
-                    
+
                     setTimeout(() => {
                         span.style.opacity = '1';
                         span.style.transform = 'translateY(0) rotateX(0deg)';
@@ -2388,10 +3139,10 @@
 
             setupAdvancedScrollEffects() {
                 let ticking = false;
-                
+
                 const updateEffects = () => {
                     const scrollY = window.pageYOffset;
-                    
+
                     // Header effects
                     const header = document.querySelector('header');
                     if (scrollY > 100) {
@@ -2402,7 +3153,7 @@
                         header.style.background = 'rgba(255, 255, 255, 0.95)';
                         header.style.boxShadow = 'none';
                     }
-                    
+
                     // Floating elements parallax
                     document.querySelectorAll('.floating-shape').forEach((shape, index) => {
                         const speed = 0.3 + (index * 0.1);
@@ -2410,24 +3161,24 @@
                         const rotation = scrollY * (0.2 + index * 0.1);
                         shape.style.transform = `translateY(${yPos}px) rotate(${rotation}deg)`;
                     });
-                    
+
                     ticking = false;
                 };
-                
+
                 const requestTick = () => {
                     if (!ticking) {
                         requestAnimationFrame(updateEffects);
                         ticking = true;
                     }
                 };
-                
+
                 window.addEventListener('scroll', requestTick);
             }
 
 
             animateCounters() {
                 const counters = document.querySelectorAll('.stat-number[data-target]');
-                
+
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -2445,21 +3196,21 @@
                 const target = parseInt(element.dataset.target);
                 const duration = 2000;
                 const start = performance.now();
-                
+
                 const animate = (current) => {
                     const elapsed = current - start;
                     const progress = Math.min(elapsed / duration, 1);
-                    
+
                     const easeOut = 1 - Math.pow(1 - progress, 3);
                     const value = Math.floor(easeOut * target);
-                    
+
                     element.textContent = value.toLocaleString();
-                    
+
                     if (progress < 1) {
                         requestAnimationFrame(animate);
                     }
                 };
-                
+
                 requestAnimationFrame(animate);
             }
         }
@@ -2495,7 +3246,8 @@
 
             createProductElement(product, index) {
                 const productDiv = document.createElement('div');
-                productDiv.className = 'product';
+                const animationClass = product.animationClass || '';
+                productDiv.className = `product ${animationClass}`;
                 productDiv.dataset.category = product.category;
                 productDiv.style.animationDelay = `${index * 0.1}s`;
                 productDiv.style.cursor = 'pointer';
@@ -2507,20 +3259,20 @@
                 };
 
 
-                const badgeHtml = product.badge ? 
+                const badgeHtml = product.badge ?
                     `<div class="product-badge ${product.badge.toLowerCase()}">${product.badge}</div>` : '';
 
 
-                const oldPriceHtml = product.originalPrice ? 
+                const oldPriceHtml = product.originalPrice ?
                     `<span class="old-price">$${product.originalPrice}</span>` : '';
 
 
-                const colorOptionsHtml = product.colors.map(color => 
+                const colorOptionsHtml = product.colors.map(color =>
                     `<div class="color-option" style="background: ${color}"></div>`
                 ).join('');
 
 
-                const starsHtml = '★'.repeat(Math.floor(product.rating)) + 
+                const starsHtml = '★'.repeat(Math.floor(product.rating)) +
                     (product.rating % 1 ? '☆' : '');
 
 
@@ -2561,7 +3313,7 @@
 
             setupFilters() {
                 const filterButtons = document.querySelectorAll('.filter-btn');
-                
+
                 filterButtons.forEach(button => {
                     button.addEventListener('click', () => {
                         const filter = button.dataset.filter;
@@ -2575,17 +3327,17 @@
                 // Update active button
                 document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
                 activeButton.classList.add('active');
-                
+
                 // Filter products
                 if (filter === 'all') {
                     this.filteredProducts = [...this.products];
                 } else {
-                    this.filteredProducts = this.products.filter(product => 
-                        product.category === filter || 
+                    this.filteredProducts = this.products.filter(product =>
+                        product.category === filter ||
                         (filter === 'limited' && product.badge === 'Limited')
                     );
                 }
-                
+
                 // Animate out current products
                 const products = document.querySelectorAll('.product');
                 products.forEach((product, index) => {
@@ -2593,7 +3345,7 @@
                     product.style.transform = 'translateY(50px) rotateX(30deg) scale(0.8)';
                     product.style.opacity = '0';
                 });
-                
+
                 setTimeout(() => {
                     this.renderProducts();
                 }, 300);
@@ -2678,13 +3430,13 @@
                     <div style="font-weight: 600; margin-bottom: 0.25rem;">Added to Cart!</div>
                     <div style="font-size: 0.9rem; opacity: 0.9;">${product.name}</div>
                 `;
-                
+
                 document.body.appendChild(notification);
-                
+
                 setTimeout(() => {
                     notification.style.transform = 'translateX(0)';
                 }, 100);
-                
+
                 setTimeout(() => {
                     notification.style.transform = 'translateX(300px)';
                     setTimeout(() => notification.remove(), 300);
@@ -2750,6 +3502,22 @@
             }
         }
 
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const body = document.body;
+
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+
+            if (menu.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        }
+
 
         function openSizeGuide() {
             document.getElementById('sizeGuideModal').style.display = 'flex';
@@ -2810,7 +3578,7 @@
             window.productManager = new ProductManager();
             window.cartSystem = new CartSystem();
             window.wishlistSystem = new WishlistSystem();
-            
+
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -2828,14 +3596,14 @@
                             if (!start) start = timestamp;
                             const progress = timestamp - start;
                             const ease = easeInOutCubic(progress / duration);
-                            
+
                             window.scrollTo(0, startPosition + distance * ease);
-                            
+
                             if (progress < duration) {
                                 window.requestAnimationFrame(step);
                             }
                         }
-                        
+
                         window.requestAnimationFrame(step);
                     }
                 });
@@ -2845,24 +3613,24 @@
             function easeInOutCubic(t) {
                 return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
             }
-            
+
             // Newsletter subscription
             document.querySelectorAll('.newsletter-form, .footer-section div').forEach(form => {
                 const button = form.querySelector('button');
                 if (button) {
-                    button.addEventListener('click', function() {
+                    button.addEventListener('click', function () {
                         const input = form.querySelector('input[type="email"]');
                         if (input && input.value) {
                             this.style.background = '#2ed573';
                             this.style.transform = 'scale(1.1) rotateZ(2deg)';
                             this.textContent = '✓ Subscribed!';
-                            
+
                             setTimeout(() => {
                                 this.style.background = '';
                                 this.style.transform = '';
                                 this.textContent = this.textContent.includes('Join') ? 'Join' : 'Subscribe';
                             }, 3000);
-                            
+
                             input.value = '';
                         } else {
                             input.style.borderColor = '#ff4757';
@@ -2886,7 +3654,5 @@
         });
     </script>
 </body>
+
 </html>
-
-
-
